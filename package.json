@@ -1,0 +1,22 @@
+{
+  "name": "graphqls",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -e js,json,graphql"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.25.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "graphql": "^15.8.0",
+    "graphql-playground-middleware-express": "^1.7.23",
+    "mongodb": "^4.2.2",
+    "nodemon": "^2.0.15"
+  }
+}
