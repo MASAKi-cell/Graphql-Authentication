@@ -5,6 +5,12 @@
     LANDSCAPE
     GRAPHIC
   }
+  
+    type AuthPayload { 
+    "認証Mutationのレスポンスとしてのみ使用される。"
+    token: String!
+    user: User!
+  }
 
   type Photos {
     id: ID!
