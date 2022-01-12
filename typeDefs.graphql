@@ -7,7 +7,7 @@
   }
   
     type AuthPayload { 
-    "認証Mutationのレスポンスとしてのみ使用される。"
+    # 認証Mutationのレスポンスとしてのみ使用される。
     token: String!
     user: User!
   }
@@ -55,4 +55,5 @@
 
   type Mutation {
     postPhoto(input: PostPhotoInput!): Photos!
+    githubAuth(code: String!): AuthPayload!
   }
