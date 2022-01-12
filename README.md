@@ -1,2 +1,2 @@
 # graphql-authentication
-GraphQLサーバーサイド、クライアントサイドの実装
+GraphQLサーバーサイド/クライアントサイドの実装
