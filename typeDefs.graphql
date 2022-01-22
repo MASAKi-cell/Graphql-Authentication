@@ -6,6 +6,12 @@
     GRAPHIC
   }
 
+  # 認証Mutationのレスポンスとしてのみ使用（トークンと認証されたユーザー情報が含まれる。）
+  type AuthPayload { 
+    token: String!
+    user: User!
+  }
+
   type Photos {
     id: ID!
     url: String!
@@ -49,4 +55,5 @@
 
   type Mutation {
     postPhoto(input: PostPhotoInput!): Photos!
+    githubAuth(code: String!): AuthPayload!
   }
