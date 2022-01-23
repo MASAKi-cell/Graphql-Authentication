@@ -5,14 +5,8 @@
     LANDSCAPE
     GRAPHIC
   }
-  
-    type AuthPayload { 
-    # 認証Mutationのレスポンスとしてのみ使用される。
-    token: String!
-    user: User!
-  }
 
-  # 認証Mutationのレスポンスとしてのみ使用（トークンと認証されたユーザー情報が含まれる。）
+  # Githubユーザー認証用Mutationに使用。
   type AuthPayload { 
     token: String!
     user: User!
