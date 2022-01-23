@@ -3,13 +3,22 @@ const { GraphQLScalarType } = require('graphQL')
 let _id = 0;
 let photos = [];
 
-// 写真をデータベースに追加する場合、ユーザーがログインしている必要がある。
+// photos、usersコレクションを作成し、配列に変換
 const resolvers = {
     Query: {
-      totaPhotos: (parent, args, { db }) => db.collection('photos').estimatedDocumentCount(),
-      allPhotos: (parent, args, { db }) => db.collection('photos').find().toArray(),
-      totalUsers: (parent, args, { db }) => db.collection('users').estimatedDocumentCount(),
-      allUsers: (parent, args, { db }) => db.collection('users').find().toArray()
+      totaPhotos: (parent, args, { db }) => db
+        .collection('photos')
+        .estimatedDocumentCount(),
+
+      allPhotos: (parent, args, { db }) => db
+        .collection('photos').find().toArray(),
+
+      totalUsers: (parent, args, { db }) => db
+        .collection('users')
+        .estimatedDocumentCount(),
+
+      allUsers: (parent, args, { db }) => db
+        .collection('users').find().toArray()
     },
     Mutation: {
       postPhoto(parent, args) {
