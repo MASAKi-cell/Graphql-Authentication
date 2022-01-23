@@ -19,7 +19,20 @@ async function start() {
   const db = client.db()
   const context = { db }
 
-  const server = new ApolloServer({ typeDefs, resolvers })
+  const server = new ApolloServer({ 
+    typeDefs, 
+    resolvers, 
+    /**
+     * 
+     * @param {*} param0 
+     * @returns { db, currentUser } Githubトークン
+     */
+    context: async ({req}) => {
+      const githubToken = req.headers.authorization
+      const currentUer = await db.collection('users').findOne({ githubToken })
+      return { db, currentUser }
+    }
+  })
   server.applyMiddleware({ app })
 
   app.get(`/`, (req, res) => res.end(`Welcome to the PhotoShare API`))
