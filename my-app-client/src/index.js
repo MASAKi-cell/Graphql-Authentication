@@ -1,17 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ApolloClient, { gql } from 'apollo-bost';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const clinet = new ApolloClient({ url: 'http://localhost:4000/graphql' })
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const query = gql `
+  {
+    totalUsers
+    totalPhotos
+  }
+`
+// クエリ文をconsoleに出力、エラーが発生した場合も同様
+clinet.query({ query })
+   .then(({ data }) => console.log(data))
+   .catch(console.error)
