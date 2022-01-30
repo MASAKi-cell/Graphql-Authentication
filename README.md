@@ -3,9 +3,9 @@
 
 概要：
 
-使用技術： 
-フロントエンド： TypScript
-バックエンド： TypScript,DynamDB
+使用技術<br>
+フロントエンド： JavaScript、React、GraphQL<br>
+バックエンド： JavaScript、GraphQL、DynamDB
 
 
 参考ソースコード：https://github.com/MoonHighway/learning-graphql
