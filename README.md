@@ -5,7 +5,7 @@
 
 使用技術<br>
 フロントエンド： JavaScript、React、GraphQL<br>
-バックエンド： JavaScript、GraphQL、DynamDB
+バックエンド： JavaScript、GraphQL、DynamoDB
 
 
 参考ソースコード：https://github.com/MoonHighway/learning-graphql
